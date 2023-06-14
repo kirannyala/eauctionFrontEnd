@@ -70,7 +70,8 @@
               "browserTarget": "eauctionUI:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "80aeb3ae-f2b1-4343-85b0-2b8dc681b214"
   }
 }
