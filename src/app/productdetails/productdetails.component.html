@@ -1,0 +1,129 @@
+<p>productdetails works!</p>
+<div class="productsArea">
+  <div class="productsSearch">
+    <label>Product:</label> 
+    <select  class="form-control" [(ngModel)]="productOptionId">  
+      <option value="default">--Select--</option>  
+      <option *ngFor="let prod of productList"  
+              [value]="prod.productId">  
+          {{prod.productName}}  
+      </option>  
+     </select>
+     <button (click)="FillProductDetails()">GET</button>
+  </div>
+  <div class="productDetailsBids" *ngIf="productData">
+    <div class="productsDetails">
+      <div class="productList">
+        <label for="">Product Name</label>
+        <span>{{productData.productName}}</span>
+      </div>
+      <div class="productList">
+        <label for="">Short Description</label>
+        <span>{{productData.shortDesc}}</span>
+      </div>
+      <div class="productList">
+        <label for="">Detailed Description</label>
+        <span>{{productData.detailedDesc}}</span>
+      </div>
+      <div class="productList">
+        <label for="">Category</label>
+        <span>{{productData.category}}</span>
+      </div>
+      <div class="productList">
+        <label for="">Starting Price</label>
+        <span>{{productData.startingPrice}}</span>
+      </div>
+      <div class="productList">
+        <label for="">Bid End Date</label>
+        <span>{{productData.bidEndDate}}</span>
+      </div>
+    </div>
+    <div class="productBids">
+      <h2>Bids</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Bid Amount</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bid of buyerBids">
+            <td>{{bid.buyerBidAmount}}</td>
+            <td>{{bid.buyerfirstName}}</td>
+            <td>{{bid.buyerEmail}}</td>
+            <td>{{bid.buyerPhone}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- <div>  
+    <div *ngIf="productData">  
+          <table >
+            <thead>
+              <tr>
+                <th colspan="2" align="center">Product Deatials</th>
+              </tr>
+            </thead>
+                        <tbody>
+              <tr >
+                <td><b>Product Name</b></td>
+                <td>{{productData.productName}}</td>
+                <td><input type="text"  value= {{productData.productName}}/></td>
+              </tr>
+              <tr >
+                <td><b>Product Short Description</b></td>
+                <td>{{productData.shortDesc}}</td>
+              </tr>
+              <tr >
+                <td><b>Product Detail Description</b></td>
+                <td>{{productData.detailedDesc}}</td>
+              </tr>
+              <tr >
+                <td><b>Product Category</b></td>
+                <td>{{productData.category}}</td>
+              </tr>
+              <tr >
+                <td><b>Product Description</b></td>
+                <td>{{productData.startingPrice}}</td>
+              </tr>
+              <tr >
+                <td colspan="2" style="background-color:#DDD" align="center">
+                    <b>Bids</b>
+                </td>
+               </tr> 
+               <tr>
+                    <td colspan="4">
+                        <table >
+                            <thead>
+                              <tr>
+                                <th>Bid Amount</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let bid of buyerBids">
+                                <td>{{bid.buyerBidAmount}}</td>
+                                <td>{{bid.buyerfirstName}}</td>
+                                <td>{{bid.buyerfirstName}}</td>
+                                <td>{{bid.buyerfirstName}}</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table> 
+                    </td>
+               </tr>
+            </tbody>
+        </table>
+                 
+           
+    </div> 
+           
+</div>  -->
